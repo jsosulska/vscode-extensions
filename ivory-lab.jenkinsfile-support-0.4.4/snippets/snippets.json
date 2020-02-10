@@ -1,0 +1,91 @@
+{
+    "source.jenkins": {
+        "pipeline": {
+            "prefix": "pipeline",
+            "body": [
+              "pipeline{",
+              "    agent{",
+              "        label \"${node}\"",
+              "    }",
+              "    stages{",
+              "        stage(\"${A}\"){",
+              "            steps{",
+              "                echo \"========executing ${A}========\"",
+              "            }",
+              "            post{",
+              "                always{",
+              "                    echo \"========always========\"",
+              "                }",
+              "                success{",
+              "                    echo \"========${A} executed successfully========\"",
+              "                }",
+              "                failure{",
+              "                    echo \"========${A} execution failed========\"",
+              "                }",
+              "            }",
+              "        }",
+              "    }",
+              "    post{",
+              "        always{",
+              "            echo \"========always========\"",
+              "        }",
+              "        success{",
+              "            echo \"========pipeline executed successfully ========\"",
+              "        }",
+              "        failure{",
+              "            echo \"========pipeline execution failed========\"",
+              "        }",
+              "    }",
+              "}"
+            ],
+            "description": "pipeline"
+        },
+        "echo": {
+            "prefix": "echo",
+            "body": [
+              "echo \"====++++${something}++++====\""
+            ],
+            "description": "echo"
+        },
+        "stage": {
+            "prefix": "stage",
+            "body": [
+              "stage(\"${A}\"){",
+              "    steps{",
+              "        echo \"====++++executing ${A}++++====\"",
+              "    }",
+              "    post{",
+              "        always{",
+              "            echo \"====++++always++++====\"",
+              "        }",
+              "        success{",
+              "            echo \"====++++${A} executed succesfully++++====\"",
+              "        }",
+              "        failure{",
+              "            echo \"====++++${A} execution failed++++====\"",
+              "        }",
+              "",
+              "    }",
+              "}"
+            ],
+            "description": "stage"
+        },
+        "post": {
+            "prefix": "post",
+            "body": [
+              "post{",
+              "    always{",
+              "        echo \"====++++always++++====\"",
+              "    }",
+              "    success{",
+              "        echo \"====++++only when successful++++====\"",
+              "    }",
+              "    failure{",
+              "        echo \"====++++only when failed++++====\"",
+              "    }",
+              "}"
+            ],
+            "description": "post"
+        }
+    }
+}

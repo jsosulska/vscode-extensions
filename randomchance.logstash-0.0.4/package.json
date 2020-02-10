@@ -1,0 +1,52 @@
+{
+	"name": "logstash",
+	"displayName": "Logstash Configuration Syntax / Language Support",
+	"description": "Adds syntax highlighting for logstash configuration files.",
+	"version": "0.0.4",
+	"publisher": "RandomChance",
+	"license": "SEE LICENSE IN LICENSE.md",
+	"icon": "images/icon-logstash.png",
+	"bugs": {
+		"url": "https://github.com/randomchance/vscode-logstash-configuration-syntax/issues"
+	},
+	"homepage": "https://github.com/randomchance/vscode-logstash-configuration-syntax",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/randomchance/vscode-logstash-configuration-syntax.git"
+	},
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "logstash",
+				"aliases": [
+					"Logstash",
+					"logstash"
+				],
+				"filenamePatterns": [
+					"*logstash.conf",
+					"*logstash.conf.j2",
+					"*logstash.conf.template"
+				],
+				"configuration": "./logstash.configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "logstash",
+				"scopeName": "text.logstash",
+				"path": "./syntaxes/logstash.tmLanguage"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "cb4951a2-8d98-4898-9f91-47ef6827f112",
+		"publisherId": "2f2c9563-a554-42d3-9f38-4899b0778c95",
+		"publisherDisplayName": "RandomChance"
+	}
+}

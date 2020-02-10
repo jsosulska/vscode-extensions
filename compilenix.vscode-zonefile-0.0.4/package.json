@@ -1,0 +1,63 @@
+{
+	"name": "vscode-zonefile",
+	"displayName": "vscode-zonefile",
+	"description": "Bind Zone File syntax highlighting",
+	"version": "0.0.4",
+	"publisher": "Compilenix",
+	"author": {
+		"email": "Compilenix@gmail.com",
+		"name": "Compilenix",
+		"url": "https://compilenix.org/"
+	},
+	"contributors": [
+		{
+			"email": "pcfens@wm.edu",
+			"name": "Phil Fenstermacher",
+			"url": "https://github.com/pcfens"
+		}
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/compilenix/vscode-zonefile"
+	},
+	"bugs": {
+		"url": "https://github.com/compilenix/vscode-zonefile/issues"
+	},
+	"engines": {
+		"vscode": "^1.15.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"contributes": {
+		"languages": [
+			{
+				"id": "zone",
+				"aliases": [
+					"Bind9 DNS Zone",
+					"zone"
+				],
+				"extensions": [
+					".zone",
+					".signed",
+					".db",
+					".dns"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "zone",
+				"scopeName": "text.zone_file",
+				"path": "./syntaxes/zone.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f0e96635-62df-41c7-86ae-cd90ad2484ae",
+		"publisherId": "6951e8e1-83b3-48f6-a4e3-0d6733820f70",
+		"publisherDisplayName": "Compilenix"
+	}
+}
